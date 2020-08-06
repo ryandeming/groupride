@@ -5,9 +5,11 @@
 </head>
 <body>
   <ul>
-    @foreach($grouprides as $groupride)
-      <li>{{ $groupride->title }}</li>
-    @endforeach
+    @forelse($grouprides as $groupride)
+      <li><a href="{{ $groupride->path() }}">{{ $groupride->title }}</a></li>
+    @empty
+      <li>No grouprides</li>
+    @endforelse
   </ul>
 </body>
 </html>

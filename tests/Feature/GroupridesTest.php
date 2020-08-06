@@ -24,6 +24,14 @@ class GroupridesTest extends TestCase
         $this->get('/grouprides')->assertSee($attributes['title']);
     }
 
+    public function test_a_user_can_view_a_groupri de() {
+        $groupride = factory('App\Groupride')->create();
+
+        $this->get($groupride->path())
+            ->assertSee($groupride->title)
+            ->assertSee($groupride->description);
+    } 
+
     public function test_a_groupride_requires_a_title() {
         $attributes = factory('App\Groupride')->raw(['title' => '']);
 

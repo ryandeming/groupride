@@ -22,4 +22,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/grouprides', 'GroupridesController@index');
+Route::get('/grouprides/{groupride}', 'GroupridesController@show');
 Route::post('/grouprides', 'GroupridesController@store');

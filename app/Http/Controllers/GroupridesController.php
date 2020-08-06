@@ -21,4 +21,8 @@ class GroupridesController extends Controller
 
         return redirect('grouprides');
     }
+
+    public function show(Groupride $groupride) {
+        return view('grouprides.show', compact('groupride'));
+    }
 }
